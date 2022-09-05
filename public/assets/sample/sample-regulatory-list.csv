@@ -1,0 +1,29 @@
+Compound/ Material name,Other names,Molicular formula,CAS,INCHI KEY,SMILES,Red-flag List name,Source,Organization,External link,Applicable category,class,RSL Limits table,Product Line restriction,Specific restriction,Numeric Limit,Test Methods,Notes
+Butyl benzyl phthalate (BBP),,,7440-34-8,,,Nike rsl - Electronics,,,,,Electrical and Electronic Equipment,Electronics,,,,,New Limt for 2015 RSL V1.00
+Cadmium (Cd),,, 7429-90-5,,,Nike rsl - Electronics,,,,,"Metals - Total, Electrical and Electronic Equipment",Electronics,,,,"IEC 62321, Ed.1, 2008","Electrical and Electronic Equipment
+Applicable to equipment that is dependent on electric currents or electromagnetic fields to function properly; is designed for use with a voltage rating not exceeding 1000 volt a.c. or 1500 volt for d.c.; and falls
+under the categories set out in Annex 1A of 2002/96/EC. Sampling and analysis is based on the test request requirements."
+Chromium (VI),,,7440-35-9,,,Nike rsl - Electronics,,,,,"Chrome VI, Electrical and Electronic Equipment",Electronics,,,,"IEC 62321, Ed.1, 2008","Electrical and Electronic Equipment
+Applicable to equipment that is dependent on electric currents or electromagnetic fields to function properly; is designed for use with a voltage rating not exceeding 1000 volt a.c. or 1500 volt for d.c.; and falls
+under the categories set out in Annex 1A of 2002/96/EC. Sampling and analysis is based on the test request requirements."
+Di-isobutyl phthalate (DIBP),,,7440-36-0,,,Nike rsl - Electronics,,,,,Electrical and Electronic Equipment,Electronics,,,,,New Limt for 2015 RSL V1.00
+Di(ethylhexyl) Phthalate (DEHP),,,7440-37-1,,,Nike rsl - Electronics,,,,,Electrical and Electronic Equipment,Electronics,,,,,New Limt for 2015 RSL V1.00
+Dibutyl Phthalate,,,7440-37-1,,,Nike rsl - Electronics,,,,,Electrical and Electronic Equipment,Electronics,,,,,New Limt for 2015 RSL V1.00
+Lead (Pb),,,7784-42-1,,,Nike rsl - Electronics,,,,,"Metals - Total, Electrical and Electronic Equipment",Electronics,,,,"IEC 62321, Ed.1, 2008","Electrical and Electronic Equipment
+Applicable to equipment that is dependent on electric currents or electromagnetic fields to function properly; is designed for use with a voltage rating not exceeding 1000 volt a.c. or 1500 volt for d.c.; and falls
+under the categories set out in Annex 1A of 2002/96/EC. Sampling and analysis is based on the test request requirements."
+Mercury (Hg),,,7440-68-8,,,Nike rsl - Electronics,,,,,"Metals - Total, Electrical and Electronic Equipment",Electronics,,,,"IEC 62321, Ed.1, 2008","Electrical and Electronic Equipment
+Applicable to equipment that is dependent on electric currents or electromagnetic fields to function properly; is designed for use with a voltage rating not exceeding 1000 volt a.c. or 1500 volt for d.c.; and falls
+under the categories set out in Annex 1A of 2002/96/EC. Sampling and analysis is based on the test request requirements."
+Polybrominated biphenyls PBB,,,7440-39-3  ,,,Nike rsl - Electronics,,,,,"Metals - Total, Electrical and Electronic Equipment",Electronics,,,,"IEC 62321, Ed.1, 2008","Electrical and Electronic Equipment
+Applicable to equipment that is dependent on electric currents or electromagnetic fields to function properly; is designed for use with a voltage rating not exceeding 1000 volt a.c. or 1500 volt for d.c.; and falls
+under the categories set out in Annex 1A of 2002/96/EC. Sampling and analysis is based on the test request requirements."
+Polybrominated Diphenyl Ethers (PBDE),,, 7440-41-7 ,,,Nike rsl - Electronics,,,,,"Metals - Total, Electrical and Electronic Equipment",Electronics,,,,"IEC 62321, Ed.1, 2008","Electrical and Electronic Equipment
+Applicable to equipment that is dependent on electric currents or electromagnetic fields to function properly; is designed for use with a voltage rating not exceeding 1000 volt a.c. or 1500 volt for d.c.; and falls
+under the categories set out in Annex 1A of 2002/96/EC. Sampling and analysis is based on the test request requirements."
+Cadmium (Cd),,,7440-40-6,,,Nike rsl - Electronics,,,,,"Metals - Total, Metals in Battery or Button Cell",Electronics,,,,"Nike in-house method Aqua regia/hydrogen peroxide digestion, followed by ICP / V GA-AAS analysis","Metals in Battery or Button Cell.
+End-users must be able to easily remove batteries contained in consumer products."
+Lead (Pb),,,7440-69-9,,,Nike rsl - Electronics,,,,,"Metals - Total, Metals in Battery or Button Cell",Electronics,,,,"Nike in-house method Aqua regia/hydrogen peroxide digestion, followed by ICP / V GA-AAS analysis","Metals in Battery or Button Cell.
+End-users must be able to easily remove batteries contained in consumer products."
+Mercury (Hg),,, 7440-42-8,,,Nike rsl - Electronics,,,,,"Metals - Total, Metals in Battery or Button Cell",Electronics,,,,"Nike in-house method Aqua regia/hydrogen peroxide digestion, followed by ICP / V GA-AAS analysis","Metals in Battery or Button Cell.
+End-users must be able to easily remove batteries contained in consumer products."

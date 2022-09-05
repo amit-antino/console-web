@@ -1,0 +1,2 @@
+Chemical name,Categories,Classification,Brand name,IUPAC,CAS,INCHI,INCHI key,EC number,Molecular formula,SMILES,SMILES type,Other names,Tags,Own Product,Note
+Test csv,Company,Commercial,Simreka,actinium,"1-0-10,2-02-0",InChI=1S/Ac,QQINRWTZWGJFDB-UHFFFAOYSA-N,1232,H20,"CCOO2CC==O2C,CCOOOC","canonical,Isotopes",Tst,"test,csv,data",,Test

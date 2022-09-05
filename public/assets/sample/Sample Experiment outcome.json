@@ -1,0 +1,15 @@
+[
+	{
+		"Experiment outcome": "test",
+		"unit": "Volume",
+		"desc": "Test Desc",
+		"status": "active"
+	},
+	{
+		"Experiment outcome": "HH (mean)",
+		"unit": "",
+		"desc": "",
+		"status": "active"
+	}		
+	
+]

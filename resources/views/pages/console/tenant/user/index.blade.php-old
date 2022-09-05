@@ -1,0 +1,180 @@
+@extends('layout.console.master')
+
+@push('plugin-styles')
+<link href="{{ asset('assets/plugins/datatables-net/dataTables.bootstrap4.css') }}" rel="stylesheet" />
+<link href="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" />
+@endpush
+
+@section('content')
+<nav class="page-breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{url('/dashboard')}}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{url('/organization/settings')}}">Organization</a></li>
+        <li class="breadcrumb-item active">User Management</li>
+    </ol>
+</nav>
+<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+    <div>
+        <h4 class="mb-3 mb-md-0">User Management</h4>
+    </div>
+    <div class="d-flex align-items-center flex-wrap text-nowrap">
+        <button type="button" class="btn btn-sm btn-outline-info btn-icon-text mr-2 d-none d-md-block" data-toggle="modal" data-target="#userModal">
+            <i class="btn-icon-prepend" data-feather="download"></i>
+            Import Data
+        </button>
+        <a href="{{ url('/organization/user/exportExcle') }}" class="btn btn-sm btn-secondary btn-icon-text mr-2 d-none d-md-block">
+            <i class="btn-icon-prepend" data-feather="download-cloud"></i>
+            Export Data
+        </a>
+        <a href="{{ url('/organization/user/pdf') }}" class="btn btn-sm btn-secondary btn-icon-text mr-2 d-none d-md-block">
+            <i class="btn-icon-prepend" data-feather="printer"></i>
+            Genrate PDF
+        </a>
+        <a href="{{url('/organization/user/create')}}" class="btn btn-sm btn-secondary btn-icon-text mr-2 d-none d-md-block">
+            <i class="btn-icon-prepend" data-feather="user-plus"></i>
+            Add User
+        </a>
+        <div class="deletebulk">
+            <button type="button" data-url="{{url('/organization/user/bulk-delete')}}" data-method="POST" data-request="ajax-confirm" data-ask_image="warning" data-ask="Are you sure you want to delete?" data-id="bulk-delete" class="btn btn-sm btn-danger btn-icon-text mb-2 mb-md-0">
+                <i class="btn-icon-prepend" data-feather="trash"></i>
+                Delete
+            </button>
+        </div>
+    </div>
+</div>
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+    <p>{{ $message }}</p>
+</div>
+@endif
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card shadow">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="user_list" class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="example-select-all"></th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if(!empty($items))
+                            @foreach($items as $key =>$val)
+                            <tr>
+                                <td><input type="checkbox" value="{{___encrypt($val->id)}}" class="checkSingle" name="select_all[]"></td>
+                                <td>{{ $val->first_name}} </td>
+                                <td>{{ $val->last_name}} </td>
+                                <td>{{ $val->email }} </td>
+                                <td class="text-center">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" data-url="{{url('/organization/user/'.___encrypt($val->id).'?status='.$val->status)}}" data-method="DELETE" data-request="ajax-confirm" data-ask_image="warning" class="custom-control-input" id="customSwitch{{___encrypt($val->id)}}" @if($val->status=='active') checked @endif>
+                                        <label class="custom-control-label" for="customSwitch{{___encrypt($val->id)}}"></label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <button id="btnGroupDrop1" type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-cogs fa-sm"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                            <a class="dropdown-item" href="javascript:void(0);" data-url="{{url('/organization/user/'.___encrypt($val->id))}}" data-method="GET" data-request="ajax-confirm" data-ask_image="warning" data-ask="Are you sure you want to Sent Mail?" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="bottom" title="Resend Mail to User">
+                                                <i class="fas fa-envelope"></i>Resend Registration Mail
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0);" data-url="{{url('/organization/user/'.___encrypt($val->id).'?reset_password=yes')}}" data-method="GET" data-request="ajax-confirm" data-ask_image="warning" data-ask="Are you sure you want to Sent Mail?" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="bottom" title="Resend Mail to User">
+                                                <i class="fas fa-envelope"></i> Resend Reset Password Mail
+                                            </a>
+                                            <a class="dropdown-item" href="{{url('/organization/user/'.___encrypt($val->id).'/edit')}}" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="Edit Profile">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:void(0);" data-url="{{url('/organization/user/'.___encrypt($val->id))}}" data-method="DELETE" data-request="ajax-confirm" data-ask_image="warning" data-ask="Are you sure you want to delete?" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Delete User">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="userModal" tabindex="-1" role="dialog" aria-labelledby="modal fade bd-prodcut-modal-lg" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="userLabel">Create Product System</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{url('/organization/user/importFile')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Import CSV
+                                <span><i class="icon-sm" data-feather="info" data-toggle="tooltip" data-placement="top" title="Select Profile"></i></span>
+                            </label>
+                            <input type="file" id="select_file" name="select_file" class="form-control-file">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-right">
+                        <input type="submit" name="upload" class="btn btn-sm btn-secondary" value="Upload">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@push('plugin-scripts')
+<script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/promise-polyfill/polyfill.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-net/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables-net-bs4/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ asset('assets/js/sweet-alert.js') }}"></script>
+@endpush
+
+@push('custom-scripts')
+<script>
+    $('#user_list').DataTable();
+    $(".deletebulk").hide();
+    $("#example-select-all").click(function() {
+        if ($(this).is(":checked")) {
+            $(".deletebulk").show();
+        } else {
+            $(".deletebulk").hide();
+        }
+        $('.checkSingle').not(this).prop('checked', this.checked);
+        $('.checkSingle').click(function() {
+            if ($('.checkSingle:checked').length == $('.checkSingle').length) {
+                $('#example-select-all').prop('checked', true);
+            } else {
+                $('#example-select-all').prop('checked', false);
+            }
+        });
+    });
+    $('.checkSingle').click(function() {
+        var len = $("[name='select_all[]']:checked").length;
+        if (len > 1) {
+            $(".deletebulk").show();
+        } else {
+            $(".deletebulk").hide();
+        }
+
+    });
+</script>
+@endpush

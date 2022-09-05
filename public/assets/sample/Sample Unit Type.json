@@ -1,0 +1,14 @@
+[
+	{
+		"Unit Type": "Unit Type 1",
+		"Unit Constant": "mile:mile;yard:yd;",
+		"Default Unit": "mile",
+		"status": "active"
+	},
+	{
+		"Unit Type": "Unit Type 2",
+		"Unit Constant": "yard 3:yd^3;ml:ml;",
+		"Default Unit": "ml",
+		"status": "active"
+	}
+]

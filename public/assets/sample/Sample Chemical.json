@@ -1,0 +1,20 @@
+[
+	{
+		"Chemical Name": "Test product1",
+		"Categories": "Company",
+		"Classification": "Compound (Pure Chemical)",
+		"Brand Name": "Simreka",
+		"IUPAC": "actinium",
+		"CAS": "1-0-10,2-02-0",
+		"INCHI": "InChI=1S/Ac",
+		"INCHI key": "QQINRWTZWGJFDB-UHFFFAOYSA-N",
+		"EC number": "1232",
+		"Molecular formula": "H20",
+		"SMILES": "CCOO2CC==O2C,CCOOOC",
+		"SMILES type": "canonical,Isotopes",
+		"Other names": "Tst",
+		"Tags": "",
+		"Own Product": "No",
+		"Note": "Test"
+	}
+]
