@@ -23,7 +23,7 @@ jobs:
           username: ${{secrets.INSTANCE_SSH_USERNAME}}
           key: ${{secrets.INSTANCE_SSH_KEY}}
           port: ${{secrets.INSTANCE_SSH_PORT}}
-          script: 
+          script: |
               cd /var/www/
               sudo git clone https://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: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@github.com/simreka/console-web.git
               cd console-web
