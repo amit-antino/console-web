@@ -2,7 +2,7 @@ name: actions file for backend code
 on:
   push:
     branches:
-      - "main"
+      - "master"
 jobs: 
   initializing-and-testing-code:
     runs-on: ubuntu-latest
